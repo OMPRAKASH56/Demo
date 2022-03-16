@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  constructor(public register:AuthService) {}
+  constructor(public register:AuthService ,private router: Router) {}
   ngOnInit(): void {}
   registerForm = new FormGroup({
     first_name: new FormControl('', [Validators.required]),
@@ -20,7 +21,10 @@ export class RegisterComponent implements OnInit {
     return this.registerForm.controls;
   }
   registerF() {
-    console.log(this.registerForm.value);
-    this.register.registerApi(this.registerForm.value);
+    this.register.registerApi(this.registerForm.value).subscribe(res=>{
+      if(res.flag==1){
+        this.router.navigate(['login']);
+      }
+    });
   }
 }

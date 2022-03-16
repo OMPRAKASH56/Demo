@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
 import { SharedRoutingModule } from './shared-routing.module';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from '../component/Account/login/login.component';
 import { RegisterComponent } from '../component/Account/register/register.component';
 
@@ -13,7 +13,7 @@ import { RegisterComponent } from '../component/Account/register/register.compon
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule,ReactiveFormsModule,FormsModule,
+    SharedRoutingModule,ReactiveFormsModule,
   ]
 })
 export class SharedModule { }

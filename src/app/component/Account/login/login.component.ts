@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   constructor(public loginApiservice: AuthService) {}
 
   loginForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
     user_name: new FormControl('', [Validators.required, Validators.email]),
   });
 

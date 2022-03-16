@@ -1,11 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="offset-3 col-6 card border-info mt-2">
+    <div class="offset-3 mt-2">
+        <a routerLink="/login" class="btn btn-primary">Login</a>
+    </div>
+    <div class="col-6 offset-3 card border-info mt-2">
       <div class="card-header h3 text-light text-center bg-info">REGISTRATION FORM</div>
       <form
         [formGroup]="registerForm"
         (ngSubmit)="registerF()"
         class="card-body p-4"
+        enctype="multipart/form-data  "
       >
         <div class="form-group">
           <label for="first_name">First Name</label>

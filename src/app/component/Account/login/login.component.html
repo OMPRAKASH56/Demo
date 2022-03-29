@@ -1,13 +1,19 @@
 <div class="container">
   <div class="row">
-    <div class="offset-3 col-6 card border-success mt-2">
-      <div class="card-header h3">Login</div>
+    <div class="offset-3 col-6 card border-success mt-2 border-outline-success">
+      <div class=" text-center h3 text-info">
+        <div class="card-title m-2">
+          LOGIN INFORMATION
+          <hr>
+        </div>
+       
+      </div>
       <form  [formGroup]="loginForm" (ngSubmit)="userLogin()" class="card-body p-4">
         <div class="form-group">
-          <label for="user_name">Email</label>
+          <label for="email">Email</label>
           <input
-            formControlName="user_name"
-            id="user_name"
+            formControlName="email"
+            id="email"
             type="text"
             class="form-control"
           />
@@ -23,15 +29,14 @@
           />
         </div>
         <button
-          class="btn btn-primary mt-3"
+          class="btn btn-outline-primary mt-3 m-2"
           [disabled]="loginForm.invalid"
           type="submit"
         >
-          Login</button
-        ><a routerLink="/register" class="btn btn-outline-success mt-3"
-          >Register</a
-        >
-      </form>
+          submit</button
+        ><a routerLink="/register" class="btn btn-outline-success mt-2"
+          >Register</a>
+          <a routerLink="/forget_pass" class="mt-3 p-2">Forget password</a></form> 
     </div>
   </div>
 </div>

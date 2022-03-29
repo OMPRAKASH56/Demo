@@ -1,104 +1,110 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="offset-3 mt-2">
-        <a routerLink="/login" class="btn btn-primary">Login</a>
-    </div>
-    <div class="col-6 offset-3 card border-info mt-2">
-      <div class="card-header h3 text-light text-center bg-info">REGISTRATION FORM</div>
-      <form
-        [formGroup]="registerForm"
-        (ngSubmit)="registerF()"
-        class="card-body p-4"
-        enctype="multipart/form-data  "
-      >
-        <div class="form-group">
-          <label for="first_name">First Name</label>
-          <input
-            formControlName="first_name"
-            id="first_name"
-            type="text"
-            class="form-control"
-          />
-          <div
-            *ngIf="f['first_name'].touched && f['first_name'].invalid"
-            class="alert alert-danger"
-          >
-            <div
-              *ngIf="
-                f['first_name'].errors && f['first_name'].errors['required']
-              "
-            >
-              Please enter First Name.
-            </div>
-          </div>
+    <div class="col-12">
+      <div class="">
+        <a routerLink="/login" class="btn btn-primary">login</a>
+      </div>
+      <div class="col-6 offset-3 card border-info">
+        <div class="card-header h3 text-light text-center bg-info">
+          REGISTRATION FORM
         </div>
-        <div class="form-group">
-          <label for="last_name">Last Name</label>
-          <input
-            formControlName="last_name"
-            id="last_name"
-            type="text"
-            class="form-control"
-          />
-          <div
-            *ngIf="f['last_name'].touched && f['last_name'].invalid"
-            class="alert alert-danger"
-          >
-            <div
-              *ngIf="f['last_name'].errors && f['last_name'].errors['required']"
-            >
-              Last name is required.
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            formControlName="email"
-            id="email"
-            type="email"
-            class="form-control"
-          />
-          <div
-            *ngIf="f['email'].touched && f['email'].invalid"
-            class="alert alert-danger"
-          >
-            <div *ngIf="f['email'].errors && f['email'].errors['required']">
-              Email is required.
-            </div>
-            <div *ngIf="f['email'].errors && f['email'].errors['email']">
-              Please, enter valid email address.
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input
-            formControlName="password"
-            id="password"
-            type="password"
-            class="form-control"
-          />
-          <div
-            *ngIf="f['password'].touched && f['password'].invalid"
-            class="alert alert-danger"
-          >
-            <div
-              *ngIf="f['password'].errors && f['password'].errors['required']"
-            >
-              Email is required.
-            </div>
-          </div>
-        </div>
-        <button
-          class="btn btn-info mt-3"
-          [disabled]="registerForm.invalid"
-          type="submit"
+        <form
+          [formGroup]="registerForm"
+          (ngSubmit)="registerF()"
+          class="card-body p-4"
+          enctype="multipart/form-data  "
         >
-          Register
-        </button>
-      </form>
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input
+              formControlName="first_name"
+              id="first_name"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="f['first_name'].touched && f['first_name'].invalid"
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  f['first_name'].errors && f['first_name'].errors['required']
+                "
+              >
+                Please enter First Name.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input
+              formControlName="last_name"
+              id="last_name"
+              type="text"
+              class="form-control"
+            />
+            <div
+              *ngIf="f['last_name'].touched && f['last_name'].invalid"
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="
+                  f['last_name'].errors && f['last_name'].errors['required']
+                "
+              >
+                Last name is required.
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              formControlName="email"
+              id="email"
+              type="email"
+              class="form-control"
+            />
+            <div
+              *ngIf="f['email'].touched && f['email'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['email'].errors && f['email'].errors['required']">
+                Email is required.
+              </div>
+              <div *ngIf="f['email'].errors && f['email'].errors['email']">
+                Please, enter valid email address.
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              formControlName="password"
+              id="password"
+              type="password"
+              class="form-control"
+            />
+            <div
+              *ngIf="f['password'].touched && f['password'].invalid"
+              class="alert alert-danger"
+            >
+              <div
+                *ngIf="f['password'].errors && f['password'].errors['required']"
+              >
+                Email is required.
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn btn-outline-info mt-3"
+            [disabled]="registerForm.invalid"
+            type="submit"
+          >
+            Register
+          </button>
+        </form>
+      </div>
     </div>
   </div>
 </div>
